@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    th, td{
+        text-align: center;
+        border: 2px solid black;
+    }
+</style>
+
+<body>
+
+    <body>
+        <table style="border-collapse: collapse; width: 500px; border: 2px solid black;">
+            <thead>
+                <tr>
+                    <th>
+                        Photo
+                    </th>
+                    <th>
+                        First Name
+                    </th>
+                    <th>
+                        Gender
+                    </th>
+                    <th>
+                        Age
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <% for(const user of userList) { %>
+                    <tr>
+                        <td style="text-align: center;"><img src=<%=user.picture.medium %> /></td>
+
+
+                        <td>
+                            <%= user.name.first %>
+                        </td>
+
+
+                        <td>
+                            <%= user.gender %>
+                        </td>
+
+
+                        <td>
+                            <%= user.dob.age %>
+                        </td>
+                    </tr>
+                    <% } %>
+                    <tr>
+                        <td></td>
+                        <td>Average Age</td>
+                        <td></td>
+                        <td><%= averageAge %></td>
+                    </tr>
+            </tbody>
+        </table>
+    </body>
+</body>
+
+</html>

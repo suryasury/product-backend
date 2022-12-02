@@ -1,0 +1,37 @@
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Photo
+                </th>
+                <th>
+                    First Name
+                </th>
+                <th>
+                    Gender
+                </th>
+                <th>
+                    Age
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(const user of userList) { %>
+                <tr>
+                    <td><img src=<%= user.picture.medium %> /></td>
+                </tr>
+                <tr>
+                    <td><%= user.name.first %></td>
+                </tr>
+                <tr>
+                    <td><%= user.gender %></td>
+                </tr>
+                <tr>
+                    <td><%= user.dob.age %></td>
+                </tr>
+                
+            <% } %>
+        </tbody>
+    </table>
+</body>
