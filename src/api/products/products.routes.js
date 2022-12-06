@@ -1,14 +1,25 @@
-const {find, findById, save, deleteById, findProductByName} = require("./products.controller")
+const {
+  find,
+  findById,
+  save,
+  deleteById,
+  findProductByName,
+} = require("./products.controller");
 
-const express = require("express")
+const {
+  bodySchema,
+  querySchema,
+  sortValidation,
+} = require("./products.validator");
 
-const router = express.Router()
+const express = require("express");
 
-router.get("/findByName", findProductByName)
-router.get("/", find)
-router.get("/:productId", findById)
-router.post("/", save)
-router.delete("/:productId", deleteById)
+const router = express.Router();
 
+router.get("/findByName", querySchema, findProductByName);
+router.get("/:productId", findById);
+router.get("/", sortValidation, find);
+router.post("/", bodySchema, save);
+router.delete("/:productId", deleteById);
 
-module.exports = router
+module.exports = router;
